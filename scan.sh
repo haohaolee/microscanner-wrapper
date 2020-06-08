@@ -4,7 +4,7 @@ set -euo pipefail
 MICROSCANNER_TOKEN="${MICROSCANNER_TOKEN:-}"
 MICROSCANNER_OPTIONS="${MICROSCANNER_OPTIONS:-}"
 DOCKER_IMAGE="${1:-}"
-TEMP_IMAGE_TAG=$(LC_CTYPE=C tr -dc 'a-zA-Z0-9' </dev/urandom | fold -w 32 | head -n 1 | tr '[:upper:]' '[:lower:]' || true)
+TEMP_IMAGE_TAG=$(LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | fold -w 32 | head -n 1 | tr '[:upper:]' '[:lower:]' || true)
 
 main() {
   local MICROSCANNER_BINARY MICROSCANNER_SOURCE
